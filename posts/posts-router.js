@@ -41,9 +41,7 @@ router.post('/', (req, res) => {
     db
         .insert({
             title,
-            contents,
-            created_at,
-            updated_at
+            contents
         })
         .then(post => {
             res.status(201).json(post)
@@ -89,3 +87,5 @@ router.put('/:id', (req, res) => {
             res.status(500).json({ error: 'The post could not be modified.' })
         });
 });
+
+module.exports = router;
